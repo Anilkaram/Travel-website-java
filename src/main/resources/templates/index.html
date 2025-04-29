@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Booking</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Travel Booking Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/flights">Flights</a></li>
+                <li><a href="/hotels">Hotels</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <h2>Book Your Trip</h2>
+            <form action="/search" method="get">
+                <div class="search-tabs">
+                    <input type="radio" id="flight-tab" name="type" value="flight" checked>
+                    <label for="flight-tab">Flights</label>
+                    
+                    <input type="radio" id="hotel-tab" name="type" value="hotel">
+                    <label for="hotel-tab">Hotels</label>
+                </div>
+
+                <div id="flight-search">
+                    <div>
+                        <label for="departure">From</label>
+                        <input type="text" id="departure" name="departure" placeholder="City or Airport">
+                    </div>
+                    <div>
+                        <label for="arrival">To</label>
+                        <input type="text" id="arrival" name="arrival" placeholder="City or Airport">
+                    </div>
+                </div>
+
+                <div id="hotel-search" style="display: none;">
+                    <div>
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" placeholder="City or Hotel">
+                    </div>
+                </div>
+
+                <button type="submit">Search</button>
+            </form>
+        </section>
+
+        <section class="deals">
+            <h2>Special Deals</h2>
+            <div class="deal-cards">
+                <div class="deal-card">
+                    <h3>Weekend Getaway</h3>
+                    <p>Book now and get 20% off on weekend trips!</p>
+                </div>
+                <div class="deal-card">
+                    <h3>Early Bird Discount</h3>
+                    <p>Book flights 60 days in advance and save up to 30%</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Travel Booking Portal</p>
+    </footer>
+
+    <script>
+        document.getElementById('flight-tab').addEventListener('change', function() {
+            document.getElementById('flight-search').style.display = 'block';
+            document.getElementById('hotel-search').style.display = 'none';
+        });
+
+        document.getElementById('hotel-tab').addEventListener('change', function() {
+            document.getElementById('flight-search').style.display = 'none';
+            document.getElementById('hotel-search').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
