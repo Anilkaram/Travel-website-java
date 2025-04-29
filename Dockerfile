@@ -1,5 +1,5 @@
 FROM tomcat
 
-COPY target/*.jar /usr/share/tomcat/myapp.jar
+COPY target/*.jar /opt/tomcat/webapps/myapp.jar
 
 
