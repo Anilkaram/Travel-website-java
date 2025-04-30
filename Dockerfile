@@ -1,5 +1,7 @@
 FROM openjdk:17-jdk-slim
 
-COPY target/*.jar .
+WORKDIR /app
 
-CMD ["java","-jar", "travel-booking-0.0.1-SNAPSHOT.jar"]
+COPY target/*.jar app.jar
+
+CMD ["java","-jar", "app.jar"]
