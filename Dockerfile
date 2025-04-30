@@ -1,4 +1,4 @@
-FROM java:17
+FROM java
 
 COPY target/*.jar .
 
