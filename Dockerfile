@@ -1,5 +1,5 @@
-FROM tomcat
+FROM java:17
 
-COPY target/*.jar /opt/tomcat/webapps/myapp.jar
+COPY target/*.jar .
 
-CMD ["java","-jar", "myapp.jar"]
+CMD ["java","-jar", "/*.jar"]
