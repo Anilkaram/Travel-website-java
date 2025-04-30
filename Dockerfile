@@ -1,5 +1,7 @@
-FROM tomcat
+FROM openjdk:17-jdk-slim
 
-COPY target/*.jar /opt/tomcat/webapps/myapp.jar
+WORKDIR /app
 
+COPY target/*.jar app.jar
 
+CMD ["java","-jar", "app.jar"]
