@@ -50,10 +50,14 @@ public class TravelController {
     }
 
     @GetMapping("/flights")
-    public String showFlights(Model model) {
-        model.addAttribute("flights", flightRepository.findAll());
-        return "flights";
+    public List<Flight> getAllFlights() {
+        return flightRepository.findAll();
     }
+    // @GetMapping("/flights")
+    // public String showFlights(Model model) {
+    //     model.addAttribute("flights", flightRepository.findAll());
+    //     return "flights";
+    // }
 
     @GetMapping("/hotels")
     public String showHotels(Model model) {
